@@ -1,12 +1,12 @@
 {
 	"name": "svelte-list-view",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A <ListView /> component for Svelte",
 	"repository": "https://github.com/maxam2017/svelte-list-view",
 	"author": "maxam2017",
 	"license": "MIT",
-	"main": "ListView.svelte",
-	"svelte": "ListView.svelte",
+	"main": "src/ListView.svelte",
+	"svelte": "src/ListView.svelte",
 	"scripts": {
 		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
 		"format": "prettier --write --plugin-search-dir=. .",
