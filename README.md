@@ -14,54 +14,28 @@ npm i svelte-list-view
 <script>
 	import ListView from 'svelte-list-view';
 
-	/**
-	 * There're some utilities for demo
-	 *
-	 * - faker: generate random name & number
-	 * - delay: return a promise which resolve after 1 sec
-	 * - asyncGetItems: mock api call
-	 */
-	const faker = {
-		name() {
-			return ['Amy', 'Bob', 'Carol', 'Denny', 'Emily'][this.number(5)];
-		},
-		number(max = 100) {
-			return Math.floor(Math.random() * max);
-		}
-	};
-
-	async function delay() {
-		return new Promise((res) => setTimeout(res, 100));
-	}
-
-	async function asyncGetItems() {
-		await delay();
-		return [
-			{ name: faker.name(), number: faker.number() },
-			{ name: faker.name(), number: faker.number() },
-			{ name: faker.name(), number: faker.number() }
-		];
-	}
-
 	let items = [];
 
-	onMount(async () => {
-		items = await asyncGetItems();
-	});
-
 	async function handleLoadMore() {
-		const newItems = await asyncGetItems();
-		items = [...items, ...newItems];
+		items = [...items, ...(await fetchItems())];
 	}
 </script>
 
 <ListView {items} on:loadmore="{handleLoadMore}" let:item>
-	<p>{item.number}: {item.name}</p>
+	<p>{item}</p>
 </ListView>
 ```
+
+## items & let:item
+
+pass `items` to component's prop and judge how to render item with `let:` directive via slot feature.
 
 ## on:loadmore
 
 The custom `loadmore` event fires when the last item get into viewport.
 
 > only fires once until items update
+
+## component
+
+optional, used to render specific outer element tag. `div` by default.
