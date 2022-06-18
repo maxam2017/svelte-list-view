@@ -1,4 +1,4 @@
-import ListView from '../ListView.svelte';
+import ListView from '../package/ListView.svelte';
 
 export default {
 	title: 'ListView',

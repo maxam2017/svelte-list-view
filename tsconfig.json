@@ -1,15 +1,3 @@
 {
-	"compilerOptions": {
-		"baseUrl": ".",
-		"rootDirs": ["."],
-		"importsNotUsedAsValues": "error",
-		"isolatedModules": true,
-		"preserveValueImports": true,
-		"lib": ["esnext", "DOM"],
-		"moduleResolution": "node",
-		"module": "esnext",
-		"target": "esnext"
-	},
-	"include": ["./src/**/*.js", "./src/**/*.ts", "./src/**/*.svelte"],
-	"exclude": ["node_modules/**", "./src/stories"]
+	"extends": "./.svelte-kit/tsconfig.json"
 }
