@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 
-	import ListView from '../../package/ListView.svelte';
+	import ListView from '../../package/list-view.svelte';
 
 	/**
 	 * There're some utilities for demo

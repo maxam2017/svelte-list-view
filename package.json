@@ -7,7 +7,7 @@
 	"license": "MIT",
 	"main": "build/bundle.js",
 	"type": "module",
-	"svelte": "ListView.svelte",
+	"svelte": "list-view.svelte",
 	"scripts": {
 		"package": "svelte-kit package",
 		"prepare": "husky install && svelte-kit sync",
