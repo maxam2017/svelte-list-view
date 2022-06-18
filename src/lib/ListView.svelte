@@ -23,7 +23,9 @@
 	}
 
 	const dispatch = createEventDispatcher();
-	const handleIntersection = () => dispatch('loadmore');
+	const handleIntersection = () => {
+		dispatch('loadmore');
+	};
 </script>
 
 <svelte:element this={component}>
@@ -31,8 +33,10 @@
 		<slot {item} />
 	{/each}
 	{#if lastItem}
-		<div use:intersection on:intersection={handleIntersection}>
-			<slot item={lastItem} />
-		</div>
+		{#key lastItem}
+			<div use:intersection={{ once: true }} on:intersection={handleIntersection}>
+				<slot item={lastItem} />
+			</div>
+		{/key}
 	{/if}
 </svelte:element>
