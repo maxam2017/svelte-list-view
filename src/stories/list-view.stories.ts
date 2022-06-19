@@ -1,15 +1,12 @@
+import ListViewDemojoke from './list-view-demo:joke.svelte';
 import listViewDemo from './list-view-demo:simple.svelte';
 
-export default {
-	title: 'ListView',
-	component: listViewDemo,
-	argTypes: {}
-};
+export default { title: 'ListView' };
 
-const Template = () => ({
-	Component: listViewDemo,
-	props: {}
+export const DadJokeAPI = () => ({
+	Component: ListViewDemojoke
 });
 
-export const Simple = Template.bind({});
-Simple.args = {};
+export const MockAPI = () => ({
+	Component: listViewDemo
+});
