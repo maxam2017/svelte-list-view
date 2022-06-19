@@ -1,4 +1,4 @@
-# svelte-list-view
+# svelte-list-view ([demo](https://svelte.dev/repl/a2987aac561049639d4b0bb09d8e8c5f))
 
 An infinite list component for Svelte apps, providing an easier way to handle load more scenarios.
 
@@ -26,16 +26,20 @@ npm i svelte-list-view
 </ListView>
 ```
 
-## items & let:item
+### items & let:item
 
 pass `items` to component's prop and judge how to render item with `let:` directive via slot feature.
 
-## on:loadmore
+### on:loadmore
 
 The custom `loadmore` event fires when the last item get into viewport.
 
 > only fires once until items update
 
-## component
+### component
 
 optional, used to render specific outer element tag. `div` by default.
+
+## License
+
+[MIT](https://github.com/maxam2017/svelte-list-view/blob/master/LICENSE)
